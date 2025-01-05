@@ -1,0 +1,55 @@
+@Tutorial(time: 10) { 
+    @Intro(title: "Create your first theme") {
+        Learn how to create and organize themes effectively in your application.
+    }
+        
+    @Section(title: "Create a theme") {
+        @ContentAndMedia {
+            Take the initial steps to make your app themeable.
+        }
+        
+        @Steps {
+            @Step {
+                Create a new SwiftUI View file named `Themes.swift`. This file will serve as the central location for all the themes used in your app.
+                
+                @Code(name: "Themes.swift", file: 01-01-01-code-0001.swift)
+            }
+            
+            @Step {
+                Each theme requires a name, a color mapping table, and optionally, a font mapping table. While the font mapping table is optional, the name and color mapping table are mandatory.
+                
+                @Code(name: "Themes.swift", file: 01-01-01-code-0001.swift)
+            }
+            
+            @Step {
+               To gain better control over theme creation, use dedicated methods for each theme. This approach is similar to implementing a factory method. 
+               
+               @Code(name: "Themes.swift", file: 01-01-01-code-0002.swift)
+           }
+            
+            @Step {
+               With the foundational setup complete, proceed to create color mappings. Start by creating a new file named `ThemeColors.swift`. This file will define all the color styles your app supports, typically derived from your app's design guidelines. Each color style is uniquely identified by a name. 
+               
+               @Code(name: "ThemesColors.swift", file: 01-01-01-code-0003.swift)
+           }
+            
+            @Step {
+                Next, configure the mapping table to link color styles to their corresponding colors. 
+                
+                @Code(name: "Themes.swift", file: 01-01-01-code-0004.swift)
+            }
+            
+            @Step {
+                If your app supports multiple platforms, you may need to create different mappings, as not all color variants are available across every platform. This also allows you to define distinct color sets tailored to each platform. 
+                
+                @Code(name: "Themes.swift", file: 01-01-01-code-0005.swift)
+            }
+            
+            @Step {
+                Finally, create a theme instance, give it a meaningful name, and assign the color mapping you have defined. 
+                
+                @Code(name: "Themes.swift", file: 01-01-01-code-0006.swift)
+            }
+        }
+    }
+}

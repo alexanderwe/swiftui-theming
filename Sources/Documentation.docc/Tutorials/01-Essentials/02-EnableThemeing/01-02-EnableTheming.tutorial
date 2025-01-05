@@ -1,0 +1,27 @@
+@Tutorial(time: 5) {
+    @Intro(title: "Enable Theming") {
+        Learn how to enable theming in your SwiftUI application.
+    }
+    @Section(title: "Add the Theme Manager") {
+        @ContentAndMedia {
+            Inject the theme manager into your app's scenes to enable consistent theming across all scenes.
+        }
+        @Steps {
+            @Step {
+                Declare a `@State` property in your app definition to hold the `ThemeManager` instance. This instance is responsible for managing the currently selected theme.
+                
+                @Code(name: "MyApp.swift", file: 01-02-01-code-0001.swift)
+            }
+            
+            @Step {
+                Use the `.withThemeManager(themeManager:)` method to make the `ThemeManager` instance accessible across all scenes in your application where theming is required.
+                
+                @Code(name: "MyApp.swift", file: 01-02-01-code-0002.swift)
+            }
+            
+            @Step {
+                That's it! Theming is now enabled in your application. You can use it to access theme colors and fonts in your views.
+            }
+        }
+    }
+}

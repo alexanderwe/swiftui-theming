@@ -1,0 +1,35 @@
+@Tutorials(name: "SwiftUI Theming") {
+    @Intro(title: "Meet SwiftUI Theming") {
+        SwiftUI Theming is a library that enables seamless theming in SwiftUI across all Apple platforms, including iOS, macOS, tvOS, watchOS, and visionOS.
+    }
+
+    @Chapter(name: "Essentials") {
+       Explore the basics of creating themes and enabling theming in your application.
+
+       @TutorialReference(tutorial: "doc:01-01-CreatingThemes")
+       @TutorialReference(tutorial: "doc:01-02-EnableTheming")
+       @TutorialReference(tutorial: "doc:01-03-OrganizingFonts")
+    }
+
+    @Chapter(name: "Advanced") {
+       Explore some advanced usages of SwiftUI Theming.
+
+       @TutorialReference(tutorial: "doc:02-01-ChangeThemesAtRuntime")
+    }
+
+    @Resources {
+        Additional resources for exploring how to build applications using SwiftUI Theming.
+
+        @SampleCode(destination: "https://github.com/alexanderwe/swiftui-theming/tree/main/Example") {
+            The library comes with a of demo application where you can explore how to use the library in a SwiftUI application
+
+            - [Example App](https://github.com/alexanderwe/swiftui-theming/tree/main/Example)
+        }
+
+        @Documentation(destination: "https://alexanderwe.github.io/swiftui-theming/main/documentation/overview") {
+            Browse the full documentation online.
+
+            - [GitHub](https://alexanderwe.github.io/swiftui-theming/documentation/overview)
+        }
+    }
+}

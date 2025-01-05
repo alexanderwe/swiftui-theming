@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# mise description="Lint the project" 
+
+swiftlint $1 --config .swiftlint.yml

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <!--Used for all platforms except macOS-->
+        <key>UIAppFonts</key>
+        <array>
+            <string>CustomFont-Bold.ttf</string>
+            <string>CustomFont-Italic.ttf</string>
+            <string>CustomFont-Regular.ttf</string>
+        </array>
+        <!--Used for macOS only-->
+        <key>ATSApplicationFontsPath</key>
+        <string>.</string>
+    </dict>
+</plist>

@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.netrc
+
+# SPM
+.swiftpm
+/.deriveddata
+/.build
+/Packages
+DerivedData/
+xcuserdata/
+
+# Documentation
+.documentation_website
+*.doccarchive
+.docs-out/
+*.docc-build/

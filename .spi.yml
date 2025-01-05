@@ -1,0 +1,15 @@
+version: 1
+external_links:
+  documentation: "https://alexanderwe.github.io/swiftui-theming/documentation/overview"
+builder:
+  configs:
+    - platform: ios
+      scheme: swiftui-theming
+    - platform: watchos
+      scheme: swiftui-theming
+    - platform: visionOS
+      scheme: swiftui-theming
+    - platform: tvOS
+      scheme: swiftui-theming
+    - platform: macOS
+      scheme: swiftui-theming

@@ -1,0 +1,51 @@
+@Tutorial(time: 15) { 
+    @Intro(title: "Change themes at runtime") {
+        Learn how to dynamically change themes at runtime.
+    }
+    
+    @Section(title: "Create a view to change the theme") {
+        Before enabling theme changes at runtime, you need a mechanism to trigger the change. This tutorial assumes the change is user-driven through a UI. However, themes can also be changed programmatically without a UI.
+
+        @Steps {
+            @Step {
+                Create a file named `ThemeChangerView.swift`.
+                
+                @Code(name: "ThemeChangerView.swift", file: 02-01-01-code-0001.swift)
+            }
+            
+            @Step {
+                Access the `ThemeManager` instance from the environment.
+                
+                @Code(name: "ThemeChangerView.swift", file: 02-01-01-code-0002.swift)
+            }
+            
+            @Step {
+                In the view's body, create a binding to the `ThemeManager` instance. 
+
+                This is required because `ThemeManager` is marked as an `@Observable` type.
+                
+                @Code(name: "ThemeChangerView.swift", file: 02-01-01-code-0003.swift)
+            }
+            
+            @Step {
+                Next, add the basic structure of the view. In this case, use a simple `Form` containing a single entry for a picker, allowing the user to select a theme.
+                
+                @Code(name: "ThemeChangerView.swift", file: 02-01-01-code-0004.swift)
+            }
+            
+            @Step {
+                Implement the picker as you would any other picker in SwiftUI. Since `Theme` instances conform to `Hashable`, they can be directly used in the `tag` modifier. Additionally, use `@Bindable` to link the picker's selection directly to the `selectedTheme` property of the `ThemeManager` instance.
+               
+                > Note: For this implementation, ensure you have multiple themes defined in your app and their types are accessible to the module where your theme changer view is located.
+                
+                @Code(name: "ThemeChangerView.swift", file: 02-01-01-code-0005.swift)
+            }
+            
+            @Step {
+                This implementation provides users with an interface to change themes at runtime. Feel free to enhance it further and create a more visually appealing theme picker using the techniques outlined here.
+                
+                @Video(source: "02-01-01-video-0001-swiftui-theming-demo")
+            }
+        }
+    }
+}

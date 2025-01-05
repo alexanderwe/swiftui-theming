@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# mise description="Format the project" 
+
+swiftformat $1 --config .swiftformat

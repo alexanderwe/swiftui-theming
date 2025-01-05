@@ -1,0 +1,84 @@
+@Tutorial(time: 15) {
+    @Intro(title: "Organize Fonts") {
+        Learn how to organize fonts for use in a theme.
+    }
+
+    @Section(title: "Add Fonts to Your Application") {
+        By default, SwiftUI Theming uses Apple's system fonts for all themes. This approach is recommended because Apple's fonts are highly optimized, offer best-in-class features, and are fully compatible with SwiftUI's font modifiers. However, certain situations or product requirements might necessitate the use of custom fonts. In this tutorial, you'll learn how to enable custom fonts with SwiftUI Theming by registering them in the traditional way.
+
+        > Note: There is also a way to register fonts programmatically when distributed via a framework. This method is not covered in this tutorial yet.
+
+        @Steps {
+            @Step {
+                To use custom fonts in your application, add the font files to your app's resources. It’s best to keep resources organized and separate from source code files. If you haven’t done so already, create a folder named `Resources/Fonts` and place all your font files in it.
+
+                @Image(
+                    source: "01-03-01-image-0001.png",
+                    alt: "A screenshot of Xcode showing the newly created 'Resources/Fonts' directory in the file tree. The right panel highlights the 'Copy Bundle Resources' step in the Xcode build phases, which includes the added custom fonts."
+                )
+            }
+
+            @Step {
+                Next, inform the application that it will use custom fonts. For `macOS` applications, set the `ATSApplicationFontsPath` key to `.` in your `Info.plist` file. For other platforms, declare all font files under the `UIAppFonts` key.
+
+                > Attention: Ensure that you include the file extensions for each font listed under the `UIAppFonts` key.
+
+                @Code(name: "Info.plist", file: 01-03-01-code-0001.plist)
+            }
+        }
+    }
+
+    @Section(title: "Accessing Your Custom Fonts in a Theme") {
+        After making the font files accessible to your app, the next step is to add them to a theme.
+
+        @Steps {
+            @Step {
+                Start by using your existing code for creating themes.
+
+                @Code(name: "Themes.swift", file: 01-03-02-code-0002.swift)
+            }
+
+            @Step {
+                To incorporate custom fonts into a theme, create a mapping table. This table maps the `Font.TextStyles` you want to use in your app to the custom fonts. You have flexibility in how you implement this mapping, as long as each text style maps to a `Font` instance.
+
+                > Tip: Use the [custom(_:size:relativeTo:)](https://developer.apple.com/documentation/swiftui/font/custom(_:size:relativeto:)) initializer of SwiftUI's `Font` type to support dynamic type and ensure accessibility.
+
+                @Code(name: "Themes.swift", file: 01-03-02-code-0003.swift)
+            }
+
+            @Step {
+                If needed, you can define different mappings for each platform. This is especially useful when using platform-specific fonts or sizes.
+
+                @Code(name: "Themes.swift", file: 01-03-02-code-0004.swift)
+            }
+
+            @Step {
+                Once the font mapping is complete, add it to the `Theme` initializer, replacing the default Apple font mapping with your custom font mapping.
+
+                @Code(name: "Themes.swift", file: 01-03-02-code-0005.swift)
+            }
+
+            @Step {
+                The final step is to access the custom font in your views.
+
+                @Code(name: "ContentView.swift", file: 01-03-02-code-0006.swift) {
+                    @Image(
+                        source: "01-03-02-image-0001.png",
+                        alt: "An iOS application displaying text with a custom font applied. The text uses Apple's default primary label color, which is black."
+                    )
+                }
+            }
+
+            @Step {
+                If your font supports different weights, you can use SwiftUI's standard font modifiers to access these variants. Additionally, you can change the text color to one of the colors defined in your theme.
+
+                @Code(name: "ContentView.swift", file: 01-03-02-code-0007.swift) {
+                    @Image(
+                        source: "01-03-02-image-0002.png",
+                        alt: "An iOS application displaying bold text with a custom font and a theme-defined primary label color. The text color is blue."
+                    )
+                }
+            }
+        }
+    }
+}
