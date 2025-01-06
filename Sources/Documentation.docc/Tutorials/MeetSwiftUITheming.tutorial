@@ -22,14 +22,10 @@
 
         @SampleCode(destination: "https://github.com/alexanderwe/swiftui-theming/tree/main/Example") {
             The library comes with a of demo application where you can explore how to use the library in a SwiftUI application
-
-            - [Example App](https://github.com/alexanderwe/swiftui-theming/tree/main/Example)
         }
 
-        @Documentation(destination: "https://alexanderwe.github.io/swiftui-theming/main/documentation/overview") {
+        @Documentation(destination: "https://alexanderwe.github.io/swiftui-theming/documentation/overview/") {
             Browse the full documentation online.
-
-            - [GitHub](https://alexanderwe.github.io/swiftui-theming/documentation/overview)
         }
     }
 }
