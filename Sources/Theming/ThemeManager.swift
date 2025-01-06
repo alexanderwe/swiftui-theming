@@ -9,6 +9,23 @@ import Observation
 import SwiftUI
 
 /// Manages the currently available theme in the app.
+///
+/// Use ``withThemeManager(themeManager:)`` in order to set a ``ThemeManager`` instance to a ``Scene``.
+/// ```swift
+/// @main
+/// struct ThemingDemoApp: App {
+///    // MARK: - State Properties
+///    @State var myThemeManager: ThemeManager = ThemeManager(initialTheme: .default)
+///
+///    // MARK: - Body
+///    var body: some Scene {
+///        WindowGroup {
+///            ContentView()
+///        }
+///        .withThemeManager(themeManager: myThemeManager)
+///    }
+/// }
+/// ```
 @Observable
 @MainActor
 public class ThemeManager {
