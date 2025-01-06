@@ -1,5 +1,5 @@
-SCHEME="swiftui-theming" # Remember to change this
-DOCC_BUNDLE_PATH="./Sources/Documentation.docc" # Remember to change this
+SCHEME="swiftui-theming"
+DOCC_BUNDLE_PATH="./Sources/Documentation.docc"
 
 # Paths used in the script.
 DERIVED_DATA_DIR=".deriveddata"
