@@ -1,6 +1,8 @@
 # SwiftUI Theming
 
 [![Test](https://github.com/alexanderwe/swiftui-theming/actions/workflows/test.yml/badge.svg)](https://github.com/alexanderwe/swiftui-theming/actions/workflows/test.yml)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Falexanderwe%2Fswiftui-theming%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/alexanderwe/swiftui-theming)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Falexanderwe%2Fswiftui-theming%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/alexanderwe/swiftui-theming)
 
 **SwiftUI Theming** is a library that enables seamless theming in SwiftUI across all Apple platforms, including iOS, macOS, tvOS, watchOS, and visionOS.
 
