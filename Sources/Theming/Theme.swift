@@ -13,11 +13,12 @@ import SwiftUI
 /// different platforms that you support. Especially since not all color variations are availble on all platforms:
 ///
 /// ```swift
+/// // MARK: - Available Themes
 /// extension Theme {
 ///     static let `default`: Theme = .createDefaultTheme()
 /// }
 ///
-/// MARK: - Theme creation
+/// // MARK: - Theme creation
 /// extension Theme {
 ///     private static func createDefaultTheme() -> Theme {
 ///         let colors: Theme.ColorMap
