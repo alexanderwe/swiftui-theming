@@ -9,7 +9,7 @@ let package = Package(
   dependencies: [
     .package(
       url: "https://github.com/alexanderwe/swiftui-theming",
-      from: "0.1.0"
+      from: "0.1.1"
     ),
   ],
   targets: [
