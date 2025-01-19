@@ -10,17 +10,17 @@ import SwiftUI
 import UIKit
 #endif
 
-// MARK: - ThemeColorTraits
+// MARK: - ThemeTraits
 #if os(visionOS) || os(iOS)
 /// Traits important for a theme.
-public typealias ThemeTraits = (
+typealias ThemeTraits = (
     colorScheme: ColorScheme,
     colorSchemeContrast: ColorSchemeContrast,
     interfaceLevel: UIUserInterfaceLevel
 )
 #elseif os(watchOS) || os(tvOS) || os(macOS)
 /// Traits important for a theme.
-public typealias ThemeTraits = (colorScheme: ColorScheme, colorSchemeContrast: ColorSchemeContrast)
+typealias ThemeTraits = (colorScheme: ColorScheme, colorSchemeContrast: ColorSchemeContrast)
 #endif
 
 extension EnvironmentValues {

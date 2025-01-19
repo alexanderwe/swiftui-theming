@@ -26,6 +26,9 @@ jobs:
         uses: jdx/mise-action@v2
         with:
           install: true
+        env:
+          MISE_HTTP_TIMEOUT: 300
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout gh-pages Branch
         uses: actions/checkout@v4

@@ -83,10 +83,22 @@ public struct Theme: Sendable, Identifiable {
     }
 
     // MARK: - Methods
+
+    /// Get a color for the requested color style and traits.
+    ///
+    /// - Parameters:
+    ///   - style: The style to resolve a color for.
+    ///   - traits: The traits used to resolve the color.
+    /// - Returns: A color for the given parameters. Returns nil if no matching color is found.
     func color(for style: ThemeColorStyle, with traits: ThemeTraits) -> Color? {
         colors[style]?.resolve(with: traits)
     }
 
+    /// Get a font for the requested style.
+    ///
+    /// - Parameters:
+    ///   - style: The style to resolve a font for.
+    /// - Returns: A font for the given parameters. Returns nil if no matching font is found.
     func font(for style: Font.TextStyle) -> Font? {
         fonts[style]
     }

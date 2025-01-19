@@ -10,7 +10,7 @@
 
 1. [Installation](#installation)
 2. [Basic Usage](#basic-usage)
-3. [Making Your App Themeable](#make-your-app-themeable)
+3. [Make Your App Themeable](#make-your-app-themeable)
 4. [Documentation](#documentation)
 5. [License](#license)
 
