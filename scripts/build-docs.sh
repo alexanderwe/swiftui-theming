@@ -31,36 +31,23 @@ build_for_platform() {
     OTHER_SWIFT_FLAGS="-Xfrontend -emit-symbol-graph -Xfrontend -emit-symbol-graph-dir -Xfrontend ${LOC_SYMBOL_GRAPHS_DIR} -Xfrontend -emit-extension-block-symbols" | xcbeautify
 }
 
-build_for_ios() {
-  echo "📱 Building for iOS"
-  build_for_platform ${SYMBOL_GRAPHS_DIR_IOS} ${DERIVED_DATA_DIR} "generic/platform=iOS"
-}
+platforms=(
+    iOS,"📱","${SYMBOL_GRAPHS_DIR_IOS}"
+    watchOS,"⌚","${SYMBOL_GRAPHS_DIR_WATCHOS}"
+    visionOS,"🕶️","${SYMBOL_GRAPHS_DIR_VISIONOS}"
+    tvOS,"📺","${SYMBOL_GRAPHS_DIR_TVOS}"
+    macOS,"💻","${SYMBOL_GRAPHS_DIR_MACOS}"
+)
 
-build_for_watchos() {
-  echo "⌚ Building for watchOS"
-  build_for_platform ${SYMBOL_GRAPHS_DIR_WATCHOS} ${DERIVED_DATA_DIR}  "generic/platform=watchOS"
-}
+# Iterate over available platforms
+for input in "${platforms[@]}"; do
+    # Split elements
+    IFS=","
+    set -- $input
 
-build_for_visionos() {
-  echo "🕶️ Building for visionOS"
-  build_for_platform ${SYMBOL_GRAPHS_DIR_VISIONOS} ${DERIVED_DATA_DIR} "generic/platform=visionOS"
-}
-
-build_for_tvos() {
-  echo "📺 Building for tvOS"
-  build_for_platform ${SYMBOL_GRAPHS_DIR_TVOS} ${DERIVED_DATA_DIR} "generic/platform=tvOS"
-}
-
-build_for_macos() {
-  echo "💻 Building for macOS"
-  build_for_platform ${SYMBOL_GRAPHS_DIR_MACOS} ${DERIVED_DATA_DIR} "generic/platform=macOS"
-}
-
-build_for_ios
-build_for_watchos
-build_for_visionos
-build_for_tvos
-build_for_macos
+    echo "$2 Building for $1"
+    build_for_platform "$3" ${DERIVED_DATA_DIR} "generic/platform=$1"
+done
 
 # Create a .doccarchive from the symbols.
 $(xcrun --find docc) convert "${DOCC_BUNDLE_PATH}" \
