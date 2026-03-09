@@ -50,6 +50,12 @@
                 
                 @Code(name: "Themes.swift", file: 01-01-01-code-0006.swift)
             }
+            
+            @Step(isOptional: true) {
+                If you want to test your themes with SwiftUI previews, you can use the built-in preview traits. 
+                
+                @Code(name: "Themes.swift", file: 01-01-01-code-0007.swift)
+            }
         }
     }
 }

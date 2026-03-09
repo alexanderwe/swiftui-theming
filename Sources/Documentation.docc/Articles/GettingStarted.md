@@ -68,7 +68,7 @@ extension Theme {
 
 ## Make App themeable
 
-To enable theming in your app, inject a `ThemeManager` instance into your app's scenes.
+To enable theming in your app, inject a ``/Theming/ThemeManager`` instance into your app's scenes.
 
 ### Step 1: Initialize `ThemeManager`
 
@@ -101,5 +101,28 @@ struct ContentView: View {
         Text("Hello World")
             .foregroundStyle(.themeColor(for: .primaryLabel))
     }
+}
+```
+
+
+## SwiftUI previews 
+
+In order to test your themes in SwiftUI previews, you can either inject a ``/Theming/ThemeManager`` or a ``/Theming/Theme``
+
+```swift
+#Preview(
+    traits: .withThemeManager(ThemeManager(initialTheme: .createDefaultTheme()))
+) {
+    Text("Hello, world!")
+            .foregroundStyle(.themeColor(for: .primaryLabel))
+}
+```
+
+```swift
+#Preview(
+    traits: .withTheme(.createDefaultTheme())
+) {
+    Text("Hello, world!")
+            .foregroundStyle(.themeColor(for: .primaryLabel))
 }
 ```

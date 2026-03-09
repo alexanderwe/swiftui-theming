@@ -117,6 +117,28 @@ struct ContentView: View {
 }
 ```
 
+### Step 3: Test your Theme in Previews
+
+Use the `withThemeManager`or `withTheme` preview traits to inject your themes into SwiftUI previews.
+
+```swift
+#Preview(
+    traits: .withThemeManager(ThemeManager(initialTheme: .default))
+) {
+    Text("Hello, world!")
+            .foregroundStyle(.themeColor(for: .primaryLabel))
+}
+```
+
+```swift
+#Preview(
+    traits: .withTheme(.default)
+) {
+    Text("Hello, world!")
+            .foregroundStyle(.themeColor(for: .primaryLabel))
+}
+```
+
 ## Documentation
 
 Comprehensive documentation is available [here](https://alexanderwe.github.io/swiftui-theming/documentation/overview).
