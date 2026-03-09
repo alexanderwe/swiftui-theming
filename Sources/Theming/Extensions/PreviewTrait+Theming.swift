@@ -26,6 +26,8 @@ struct ThemePreviewTrait: PreviewModifier {
 extension PreviewTrait where T == Preview.ViewTraits {
     /// Apply a theme manager to the preview.
     ///
+    /// Use this preview trait to use a dedicated ``/Theming/ThemeManager`` in your previews.
+    ///
     /// ```swift
     /// #Preview(
     ///     traits: .withTheme(.createDefaultTheme())
@@ -44,7 +46,7 @@ extension PreviewTrait where T == Preview.ViewTraits {
 extension PreviewTrait where T == Preview.ViewTraits {
     /// Apply a theme to the preview.
     ///
-    /// Use this preview trait to use a dedicated ``Theme`` in your previews.
+    /// Use this preview trait to use a dedicated ``/Theming/Theme`` in your previews.
     ///
     /// ```swift
     /// #Preview(

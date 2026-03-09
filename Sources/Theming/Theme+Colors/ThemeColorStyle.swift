@@ -22,7 +22,9 @@ public struct ThemeColorStyle: Identifiable, Sendable {
     /// ID to uniquely identify this style.
     ///
     /// The value is derived from ``name``
-    public var id: String { name }
+    public var id: String {
+        name
+    }
 
     /// The name of the color style
     public let name: String

@@ -10,7 +10,6 @@ import Testing
 @testable import Theming
 
 @MainActor
-@Suite("Theme Color Tests")
 struct ThemeColorTests {
     #if os(iOS) || os(visionOS)
     @Test(
@@ -26,7 +25,7 @@ struct ThemeColorTests {
             (ThemeTraits(colorScheme: .dark, colorSchemeContrast: .increased, interfaceLevel: .elevated), Color.indigo),
         ]
     )
-    func testThemeColorResolution(traits: ThemeTraits, expectedColor: Color) async throws {
+    func themeColorResolution(traits: ThemeTraits, expectedColor: Color) {
         // Given
         let themeColor: ThemeColor = ThemeColor(
             lightColor: .black,
@@ -55,7 +54,7 @@ struct ThemeColorTests {
             (ThemeTraits(colorScheme: .dark, colorSchemeContrast: .increased), Color.gray),
         ]
     )
-    func testThemeColorResolution(traits: ThemeTraits, expectedColor: Color) async throws {
+    func testThemeColorResolution(traits: ThemeTraits, expectedColor: Color) {
         // Given
         let themeColor: ThemeColor = ThemeColor(
             darkColor: .cyan,
@@ -80,7 +79,7 @@ struct ThemeColorTests {
             (ThemeTraits(colorScheme: .dark, colorSchemeContrast: .increased), Color.gray),
         ]
     )
-    func testThemeColorResolution(traits: ThemeTraits, expectedColor: Color) async throws {
+    func testThemeColorResolution(traits: ThemeTraits, expectedColor: Color) {
         // Given
         let themeColor: ThemeColor = ThemeColor(
             lightColor: .black,

@@ -51,7 +51,9 @@ public struct Theme: Sendable, Identifiable {
     /// ID to uniquely identify this theme.
     ///
     /// The value is derived from ``name``
-    public var id: String { name }
+    public var id: String {
+        name
+    }
 
     /// The name of the theme.
     public let name: String

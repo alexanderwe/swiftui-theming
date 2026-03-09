@@ -10,7 +10,6 @@ import Testing
 @testable import Theming
 
 @MainActor
-@Suite("Theme Font Tests")
 struct ThemeFontTests {
     @Test(
         "Default Font is correctly resolved",
@@ -28,7 +27,7 @@ struct ThemeFontTests {
             (Font.TextStyle.caption2, Font.caption2),
         ]
     )
-    func testDefaultThemeFontResolution(textStyle: Font.TextStyle, expectedFont: Font) async throws {
+    func defaultThemeFontResolution(textStyle: Font.TextStyle, expectedFont: Font) {
         // Given
         let theme: Theme = .default
 

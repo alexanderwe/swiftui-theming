@@ -9,10 +9,9 @@ import Testing
 @testable import Theming
 
 @MainActor
-@Suite("Theme Manager Tests")
 struct ThemeManagerTests {
     @Test("Selected Theme is correctly set")
-    func testThemeSelection() async throws {
+    func themeSelection() {
         // Given
         let themeManager = ThemeManager(initialTheme: .default)
 

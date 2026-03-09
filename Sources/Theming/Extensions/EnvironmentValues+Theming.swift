@@ -19,7 +19,9 @@ struct UserInterfaceLevel: EnvironmentKey {
 
 extension EnvironmentValues {
     /// The current interface level for this environment.
-    var userInterfaceLevel: UIUserInterfaceLevel { self[UserInterfaceLevel.self] }
+    var userInterfaceLevel: UIUserInterfaceLevel {
+        self[UserInterfaceLevel.self]
+    }
 }
 #endif
 
