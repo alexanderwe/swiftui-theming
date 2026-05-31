@@ -5,7 +5,7 @@
 //  Created by Weiß, Alexander on 28.12.24.
 //
 
-import SwiftUI
+public import SwiftUI
 
 /// Base type for the theming system describing a single theme.
 ///

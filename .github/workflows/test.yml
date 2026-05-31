@@ -1,6 +1,5 @@
 # @format
 name: Test
-
 on:
   push:
     branches:
@@ -9,103 +8,43 @@ on:
     branches:
       - "*"
       - "!gh-pages"
-
 jobs:
-  test-ios:
-    runs-on: macos-15
+  test:
+    name: Test ${{ matrix.platform }}
+    runs-on: macos-26
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: iOS
+            destination: "platform=iOS Simulator,OS=26.5,name=iPhone 17 Pro"
+          - platform: watchOS
+            destination: "platform=watchOS Simulator,OS=26.5,name=Apple Watch Ultra 3 (49mm)"
+          - platform: visionOS
+            destination: "platform=visionOS Simulator,OS=26.5,name=Apple Vision Pro"
+          - platform: tvOS
+            destination: "platform=tvOS Simulator,OS=26.5,name=Apple TV"
+          - platform: macOS
+            destination: "platform=macOS"
     steps:
-      - name: Select Xcode 16.2
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
-
+      - name: Select Xcode 26.5
+        run: sudo xcode-select -s /Applications/Xcode_26.5.app
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
-
       - name: mise setup
-        uses: jdx/mise-action@v2
+        uses: jdx/mise-action@v4
         with:
           install: true
         env:
           MISE_HTTP_TIMEOUT: 300
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Test iOS
+      - name: Test ${{ matrix.platform }}
         run: >
-          xcodebuild test -scheme swiftui-theming -destination "platform=iOS Simulator,OS=18.2,name=iPhone 16 Pro" | xcbeautify
+          set -euo pipefail
 
-  test-watchos:
-    runs-on: macos-15
-    steps:
-      - name: Select Xcode 16.2
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: mise setup
-        uses: jdx/mise-action@v2
-        with:
-          install: true
-
-      - name: Test watchOS
-        run: >
-          xcodebuild test -scheme swiftui-theming -destination "platform=watchOS Simulator,OS=11.2,name=Apple Watch Ultra 2 (49mm)" | xcbeautify
-  test-visionos:
-    runs-on: macos-15
-    steps:
-      - name: Select Xcode 16.2
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: mise setup
-        uses: jdx/mise-action@v2
-        with:
-          install: true
-      - name: Test visionOS
-        run: >
-          xcodebuild test -scheme swiftui-theming -destination "platform=visionOS Simulator,OS=2.2,name=Apple Vision Pro" | xcbeautify
-  test-tvos:
-    runs-on: macos-15
-    steps:
-      - name: Select Xcode 16.2
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: mise setup
-        uses: jdx/mise-action@v2
-        with:
-          install: true
-
-      - name: Test tvOS
-        run: >
-          xcodebuild test -scheme swiftui-theming -destination "platform=tvOS Simulator,OS=18.2,name=Apple TV" | xcbeautify
-  test-macos:
-    runs-on: macos-15
-    steps:
-      - name: Select Xcode 16.2
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: mise setup
-        uses: jdx/mise-action@v2
-        with:
-          install: true
-
-      - name: Test macOS
-        run: >
-          xcodebuild test -scheme swiftui-theming -destination "platform=macOS" | xcbeautify
+          xcodebuild test
+          -scheme swiftui-theming
+          -destination "${{ matrix.destination }}"
+          | xcbeautify

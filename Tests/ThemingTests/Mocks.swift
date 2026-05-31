@@ -6,6 +6,7 @@
 //
 
 import Theming
+import SwiftUI
 
 // MARK: - Mocked Theme Color Styles
 extension ThemeColorStyle {

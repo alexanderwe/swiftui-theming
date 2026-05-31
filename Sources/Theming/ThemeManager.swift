@@ -5,8 +5,8 @@
 //  Created by Weiß, Alexander on 28.12.24.
 //
 
-import Observation
-import SwiftUI
+public import Observation
+public import SwiftUI
 
 /// Manages the currently available theme in the app.
 ///

@@ -1,0 +1,8 @@
+[tools]
+swiftformat = "0.61.1"
+swiftlint = "0.63.3"
+xcbeautify = "3.2.1"
+
+[settings] # project-local settings
+# Lock file enabled
+lockfile = true

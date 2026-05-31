@@ -5,7 +5,7 @@
 //  Created by Weiß, Alexander on 03.01.25.
 //
 
-import SwiftUI
+public import SwiftUI
 
 extension View {
     /// Sets the default theme font for text in the view.

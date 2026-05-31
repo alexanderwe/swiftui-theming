@@ -5,7 +5,7 @@
 //  Created by Weiß, Alexander on 07.03.26.
 //
 
-import SwiftUI
+public import SwiftUI
 
 // MARK: - PreviewModifier
 

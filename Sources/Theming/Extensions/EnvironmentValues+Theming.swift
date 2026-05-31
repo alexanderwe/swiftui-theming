@@ -5,10 +5,7 @@
 //  Created by Weiß, Alexander on 28.12.24.
 //
 
-import SwiftUI
-#if os(iOS) || os(visionOS)
-import UIKit
-#endif
+public import SwiftUI
 
 #if os(iOS) || os(visionOS)
 struct UserInterfaceLevel: EnvironmentKey {

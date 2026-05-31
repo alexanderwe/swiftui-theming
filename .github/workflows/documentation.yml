@@ -12,18 +12,18 @@ concurrency:
 
 jobs:
   build-and-push-documentation:
-    runs-on: macos-15
+    runs-on: macos-26
     steps:
-      - name: Select Xcode 16.2
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+      - name: Select Xcode 26.5
+        run: sudo xcode-select -s /Applications/Xcode_26.5.app
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: mise setup
-        uses: jdx/mise-action@v2
+        uses: jdx/mise-action@v4
         with:
           install: true
         env:
@@ -31,19 +31,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout gh-pages Branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: gh-pages
           path: docs-out
       - name: Build documentation
         run: >
-          ./scripts/build-docs.sh
+          mise run docs:build
 
       - name: Fix permissions
         run: "sudo chown -R $USER .docs-out"
 
       - name: Publish documentation to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.7.2
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           branch: gh-pages
           folder: .docs-out
