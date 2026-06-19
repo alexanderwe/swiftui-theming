@@ -2,5 +2,9 @@
   {
     "version": "latest",
     "url": "/swiftui-theming/latest/documentation/overview/"
+  },
+  {
+    "version": "0.2.2",
+    "url": "/swiftui-theming/0.2.2/documentation/overview/"
   }
 ]
