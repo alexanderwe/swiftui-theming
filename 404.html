@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Page Not Found</title>
+  <script>
+    var path = window.location.pathname;
+    var base = '/swiftui-theming/';
+
+    if (path.startsWith(base)) {
+      var rest = path.substring(base.length);
+
+      if (rest && !rest.startsWith('latest/') && !/^\d+\.\d+/.test(rest)) {
+        window.location.replace(base + 'latest/' + rest);
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>Page not found. <a href="/swiftui-theming/latest/documentation/overview/">Go to documentation</a>.</p>
+</body>
+</html>
