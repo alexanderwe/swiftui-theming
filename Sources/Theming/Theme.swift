@@ -45,7 +45,7 @@ public import SwiftUI
 /// ```
 /// - Remark: While a theme can be used to set custom fonts within the app, the general recommendation is to stick to the Apple
 /// default provided fonts. They offer predictable, tested and best UI looking results. Per default a newly created ``Theme``
-/// instance will use Apple's default font via ``/Theming/Theme/FontMap/appleDefault-property``
+/// instance will use Apple's default font via ``Theming/Theme/FontMap/appleDefault``
 public struct Theme: Sendable, Identifiable {
     // MARK: - Public Properties
     /// ID to uniquely identify this theme.
@@ -111,7 +111,7 @@ extension Theme {
     /// A mapping from ``ThemeColorStyle`` to ``ThemeColor``
     public typealias ColorMap = [ThemeColorStyle: ThemeColor]
 
-    /// A mapping from ``/SwiftUICore/Font.TextStyle`` to ``/SwiftUICore/Font``
+    /// A mapping from ``/SwiftUI/Font/TextStyle`` to ``SwiftUI/Font``
     public typealias FontMap = [Font.TextStyle: Font]
 }
 

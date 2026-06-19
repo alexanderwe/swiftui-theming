@@ -5,8 +5,8 @@
 //  Created by Weiß, Alexander on 03.01.25.
 //
 
-import Theming
 import SwiftUI
+import Theming
 
 // MARK: - Mocked Theme Color Styles
 extension ThemeColorStyle {

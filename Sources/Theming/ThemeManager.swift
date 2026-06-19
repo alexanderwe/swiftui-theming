@@ -10,7 +10,7 @@ public import SwiftUI
 
 /// Manages the currently available theme in the app.
 ///
-/// Use ``withThemeManager(themeManager:)`` in order to set a ``ThemeManager`` instance to a ``Scene``.
+/// Use ``SwiftUI/Scene/withThemeManager(themeManager:)`` in order to set a ``ThemeManager`` instance to a ``SwiftUI/Scene``.
 /// ```swift
 /// @main
 /// struct ThemingDemoApp: App {

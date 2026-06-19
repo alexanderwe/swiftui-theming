@@ -1,0 +1,30 @@
+.version-picker {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    padding: 0 16px;
+    font-size: 14px;
+}
+
+.version-picker-label {
+    color: var(--color-figure-gray-secondary, #6e6e73);
+    white-space: nowrap;
+}
+
+.version-picker-select {
+    appearance: auto;
+    background: var(--color-fill, #fff);
+    border: 1px solid var(--color-grid, #d2d2d7);
+    border-radius: 4px;
+    color: var(--color-text, #1d1d1f);
+    font-size: 13px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+body[data-color-scheme="dark"] .version-picker-select {
+    background: var(--color-fill, #1c1c1e);
+    border-color: var(--color-grid, #424245);
+    color: var(--color-text, #f5f5f7);
+}
