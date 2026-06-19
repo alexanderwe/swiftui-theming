@@ -27,7 +27,7 @@
 
 # Theme.FontMap
 
-A mapping from `/SwiftUI/Font.TextStyle` to `SwiftUI/Font`
+A mapping from `/SwiftUI/Font/TextStyle` to `SwiftUI/Font`
 
 ```
 typealias FontMap = [Font.TextStyle : Font]
